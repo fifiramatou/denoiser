@@ -16,5 +16,5 @@ clean_test=sys.argv[1]+"/test/clean"
 #clean_dev=path to valentini
 
 #le rep courant est denoiser
-denoiser.audio $noisy_train > egs/val/tr/noisy.json
+denoiser.audio noisy_train > egs/val/tr/noisy.json
 
