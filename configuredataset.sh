@@ -1,6 +1,6 @@
 
 path=$1
-echo $path
+echo $path #chemin du dataset
 noisy_train= $path + "/train/noisy"
 #if [[ ! -e $path ]]; then
  #   mkdir -p $path
