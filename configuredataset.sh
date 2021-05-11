@@ -5,7 +5,7 @@ echo $noisy_train_path #chemin du dataset
 #if [[ ! -e $path ]]; then
  #   mkdir -p $path
 #fi
-egs_path = "egs/val/train"
+egs_path = egs/val/train
 if [[ ! -e $egs_path ]]; then
    mkdir -p $egs_path
 fi
