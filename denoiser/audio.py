@@ -11,10 +11,15 @@ from pathlib import Path
 import math
 import os
 import sys
-
 import torchaudio
 from torch.nn import functional as F
 
+#import subprocess
+
+# implement pip as a subprocess:
+#subprocess.check_call([sys.executable, '-m', 'pip', 'install', torchaudio'])
+
+#subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'PySoundFile'])
 
 Info = namedtuple("Info", ["length", "sample_rate", "channels"])
 
