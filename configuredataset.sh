@@ -6,7 +6,7 @@ dataset_path=/content/$dataset_name
 echo "Répertoire du dataset:"$dataset_path
 #noisy_train_path=$1
 #egs_path=egs/val/train
-egs_path="egs/{$dataset_name}"
+egs_path=egs/$dataset_name
 echo $egs_path
 if [[ ! -e $egs_path ]]; then
    mkdir -p $egs_path
