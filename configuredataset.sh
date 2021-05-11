@@ -1,8 +1,8 @@
 #nom du dataset
 dataset_name=$1
 echo "Nom du dataset:"$dataset_name 
-#dataset_path=/kaggle/input/$dataset_name
-dataset_path=/content/$dataset_name
+dataset_path=/kaggle/input/$dataset_name
+#dataset_path=/content/$dataset_name
 echo "Répertoire du dataset:"$dataset_path
 #noisy_train_path=$1
 #egs_path=egs/val/train
