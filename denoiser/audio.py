@@ -16,11 +16,11 @@ import sys
 import subprocess
 
 # implement pip as a subprocess:
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'torchaudio'])
+#subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'torchaudio'])
 import torchaudio
 from torch.nn import functional as F
 
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'PySoundFile'])
+#subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'PySoundFile'])
 
 Info = namedtuple("Info", ["length", "sample_rate", "channels"])
 
