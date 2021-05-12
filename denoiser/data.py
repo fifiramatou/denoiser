@@ -81,10 +81,10 @@ class NoisyCleanSet:
         noisy_json = os.path.join(json_dir, 'noisy.json')
         clean_json = os.path.join(json_dir, 'clean.json')
         with open(noisy_json, 'r') as f:
-            #noisy = json.load(f)
-            noisy = json.load(f.decode("utf-8"))
+            noisy = json.load(f)
+            #noisy = json.load(f.decode("utf-8"))
         with open(clean_json, 'r') as f:
-            clean = json.load(f.decode("utf-8"))
+            clean = json.load(f)
 
         match_files(noisy, clean, matching)
         kw = {'length': length, 'stride': stride, 'pad': pad, 'sample_rate': sample_rate}
