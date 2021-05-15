@@ -1,4 +1,8 @@
 
+#!/usr/bin/env python
+import getopt
+import sys
+import os
 def make_json_for_dataset(platform, dataset):
     root = ""
     if platform == "kaggle":
