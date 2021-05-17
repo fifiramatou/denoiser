@@ -25,19 +25,20 @@ def make_json_for_dataset(platform, dataset):
     try:
         os.makedirs(egs_path_tr)
         os.makedirs(egs_path_tt)
-    except OSError:
-        print("Creation of the directories %s failed" % egs_path_tr)
-        #sys.exit()
-    try:
-        os.system("python3 -m denoiser.audio $clean_train > $egs_path_tr/clean.json")
+        command = "python3 -m denoiser.audio " + clean_train + " > " + egs_path_tr+"/clean.json"
+        print(command)
+        os.system(command)
+        print("JSON files successfully generated!")
+        #os.system("python3 -m denoiser.audio $clean_train > $egs_path_tr/clean.json")
         # python3 -m denoiser.audio $noisy_train > $egs_path_tr/noisy.json
 
         # python3 -m denoiser.audio $clean_test > $egs_path_tt/clean.json
         # python3 -m denoiser.audio $noisy_test > $egs_path_tt/noisy.json
     except OSError as e:
         print(e)
+        print("Creation of the directories %s failed" % egs_path_tr)
         sys.exit()
-    print("JSON files successfully generated!")
+    
 
 
 def main():
