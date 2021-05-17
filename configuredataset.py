@@ -10,7 +10,8 @@ def gen_conf_yaml(dataset):
     config = [{'dset': [{'train': 'egs/'+dataset+"/tr"}, {'valid': None}, {'test': 'egs/'+dataset+'/tt'}, {'noisy_json': 'egs/'+dataset+'/tr/noisy.json'}, {'noisy_dir': None}, {'matching': 'sort'}]}, {'eval_every': 2}]
     SafeDumper.add_representer(type(None), lambda dumper,
                                value: dumper.represent_scalar(u'tag:yaml.org,2002:null', ''))
-    with open("conf/dset/"+dataset+'.yaml', 'w') as f:
+    #with open("conf/dset/"+dataset+'.yaml', 'w') as f:
+    with open("conf/dset/dataset.yaml", 'w') as f:
         yaml.safe_dump(config, f, default_flow_style=False)
 
 
