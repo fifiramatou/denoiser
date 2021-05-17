@@ -25,9 +25,19 @@ def make_json_for_dataset(platform, dataset):
     try:
         os.makedirs(egs_path_tr)
         os.makedirs(egs_path_tt)
-        command = "python3 -m denoiser.audio " + clean_train + " > " + egs_path_tr+"/clean.json"
-        print(command)
-        os.system(command)
+        command_clean_train = "python3 -m denoiser.audio " + clean_train + " > " + egs_path_tr+"/clean.json"
+        print(command_clean_train)
+        os.system(command_clean_train)
+        command_noisy_train = "python3 -m denoiser.audio " + noisy_train + " > " + egs_path_tr+"/noisy.json"
+        print(command_noisy_train)
+        os.system(command_noisy_train)
+
+        command_clean_test = "python3 -m denoiser.audio " + clean_test + " > " + egs_path_tt+"/clean.json"
+        print(command_clean_test)
+        os.system(command_clean_test)
+        command_noisy_test = "python3 -m denoiser.audio " + noisy_test + " > " + egs_path_tt+"/noisy.json"
+        print(command_noisy_test)
+        os.system(command_noisy_test)
         print("JSON files successfully generated!")
         #os.system("python3 -m denoiser.audio $clean_train > $egs_path_tr/clean.json")
         # python3 -m denoiser.audio $noisy_train > $egs_path_tr/noisy.json
