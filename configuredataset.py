@@ -32,7 +32,7 @@ def make_json_for_dataset(platform, dataset):
     egs_path_tr = "egs/"+dataset+"/tr"
     egs_path_tt = "egs/"+dataset+"/tt"
     try:
-    	        os.makedirs(egs_path_tr)
+    	os.makedirs(egs_path_tr)
         os.makedirs(egs_path_tt)
         # audio.main($clean_train)
         command = "python3 -m denoiser.audio " + clean_train + " > " + egs_path_tr+"/clean.json"
