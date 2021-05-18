@@ -8,7 +8,7 @@ def remove_prefix(text, prefix):
     return text[len(prefix):] if text.startswith(prefix) else text
 
 def gen_conf_yaml(dataset):
-    config = [{'dset': [{'train': 'egs/'+dataset+"/tr"}, {'valid': None}, {'test': 'egs/'+dataset+'/tt'}, {'noisy_json': 'egs/'+dataset+'/tr/noisy.json'}, {'noisy_dir': No>                        {'matching': 'sort'}]}, {'eval_every': 2}]
+    config = [{'dset': [{'train': 'egs/'+dataset+"/tr"}, {'valid': None}, {'test': 'egs/'+dataset+'/tt'}, {'noisy_json': 'egs/'+dataset+'/tr/noisy.json'}, {'noisy_dir': None}, {'matching': 'sort'}]}, {'eval_every': 2}]
     SafeDumper.add_representer(type(None), lambda dumper,
                                value: dumper.represent_scalar(u'tag:yaml.org,2002:null', ''))
     with open("conf/dset/"+dataset+'.yaml', 'w') as f:
