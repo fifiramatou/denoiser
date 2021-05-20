@@ -48,7 +48,7 @@ def evaluate(args, model=None, data_loader=None):
     # Load data
     if data_loader is None:
         dataset = NoisyCleanSet(args.data_dir, matching=args.matching, sample_rate=args.sample_rate)
-        data_loader = distrib.loader(dataset, batch_size=1, num_workers=2)
+        data_loader = distrib.loader(dataset, batch_size=1, num_workers=0)
     pendings = []
     with ProcessPoolExecutor(args.num_workers) as pool:
         with torch.no_grad():
